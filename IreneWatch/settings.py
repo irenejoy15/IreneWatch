@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'watchlist_app',
 ]
 
 MIDDLEWARE = [
@@ -74,8 +75,15 @@ WSGI_APPLICATION = 'IreneWatch.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'mssql',
+        'NAME': 'IrenePython',
+        'USER': 'sa',
+        'PASSWORD': 'irene143143',
+        'HOST': 'localhost',
+        'PORT': '1433', # Default SQL Server port
+        'OPTIONS': {
+            'driver': 'ODBC Driver 17 for SQL Server', # Or the appropriate driver version
+        },
     }
 }
 
