@@ -6,3 +6,12 @@ def movie_list(request):
     movies = Movie.objects.all()
     movie_data = {'movies': list(movies.values())}
     return JsonResponse(movie_data, safe=False)
+
+def movie_detail(request, pk):
+    movie = Movie.objects.get(pk=pk)
+    movie_data = {
+       'name': movie.name,
+       'description': movie.description,
+       'active': movie.active
+    }
+    return JsonResponse(movie_data)
