@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'IreneWatch.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'mssql',
-        'NAME': 'IrenePython',
+        'NAME': 'IrenePython2',
         'USER': 'sa',
         'PASSWORD': 'irene143143',
         'HOST': 'localhost',

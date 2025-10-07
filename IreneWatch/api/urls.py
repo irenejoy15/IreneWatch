@@ -1,8 +1,10 @@
 
 from django.urls import path, include
 # from IreneWatch.api.view import movie_list ,movie_detail
-from IreneWatch.api.view import MovieListAV, MovieDetailAV
+from IreneWatch.api.view import WatchDetailAV, WatchListAV, StreamPlatformAV, StreamPlatformDetailAV
 urlpatterns = [
-    path('list/', MovieListAV.as_view(), name='movie-list'),
-    path('<int:pk>', MovieDetailAV.as_view(), name='movie-detail'),
+    path('list/', WatchListAV.as_view(), name='watchlist'),
+    path('<int:pk>', WatchDetailAV.as_view(), name='watch-detail'),
+    path('stream/list/', StreamPlatformAV.as_view(), name='stream-platform'),
+    path('stream/<int:pk>', StreamPlatformDetailAV.as_view(), name='stream-platform-detail'),
 ]
