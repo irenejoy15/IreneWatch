@@ -13,8 +13,11 @@ class WatchlistSerializer(serializers.ModelSerializer):
         # exclude = ['active']
 
 class StreamPlatformSerializer(serializers.ModelSerializer):
+    # HAS MANY ALL FIELDS OF WATCHLIST
     watchlist = WatchlistSerializer(many=True, read_only=True)
-
+    # watchlist = serializers.PrimaryKeyRelatedField(many=True,read_only=True)
+    # NASA VIEW.PY
+    # watchlist = serializers.HyperlinkedRelatedField(many=True, read_only=True, view_name='watch-detail')
     class Meta:
         model = StreamPlatform
         fields = '__all__'
